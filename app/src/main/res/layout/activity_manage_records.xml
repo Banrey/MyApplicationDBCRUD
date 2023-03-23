@@ -1,80 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
     tools:context=".MainActivity">
 
     <!--Edit text for getting course id-->
-    <EditText
-        android:id="@+id/idEdtEmpId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Enter Employee Id"
-        android:importantForAutofill="no"
-        android:inputType="number" />
 
-    <!--Button for adding your course to Firebase-->
-    <Button
-        android:id="@+id/idBtnGetEmp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Get Employee Details"
-        android:textAllCaps="false" />
-
-    <androidx.cardview.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/idCVItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:visibility="gone"
-        app:cardCornerRadius="6dp"
-        app:cardElevation="4dp">
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:orientation="vertical"
-            android:padding="4dp">
+            android:orientation="vertical">
 
-            <!--Textview for displaying our Course Name-->
-            <TextView
-                android:id="@+id/idTVEmpName"
+            <EditText
+                android:id="@+id/idEdtEmpId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:text="CourseName"
-                android:textColor="@color/purple_500"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:hint="Enter Employee Id"
+                android:importantForAutofill="no"
+                android:inputType="number" />
 
-            <!--Textview for displaying our Course Duration-->
-            <TextView
-                android:id="@+id/idTVGender"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/idBtnGetEmp"
+                android:layout_width="331dp"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:text="Duration"
-                android:textColor="@color/black" />
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:text="Get Employee Details"
+                android:textAllCaps="false" />
 
-            <!--Textview for displaying our Course Description-->
-            <TextView
-                android:id="@+id/idTVCivilStatus"
-                android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idCVItem"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:text="Description"
-                android:textColor="@color/black" />
+                android:visibility="gone"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp">
+
+
+                <!--Textview for displaying our Course Name-->
+                <TextView
+                    android:id="@+id/idTVEmpName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="CourseName"
+                    android:textColor="@color/purple_500"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!--Textview for displaying our Course Duration-->
+                <TextView
+                    android:id="@+id/idTVGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Duration"
+                    android:textColor="@color/black" />
+
+                <!--Textview for displaying our Course Description-->
+                <TextView
+                    android:id="@+id/idTVCivilStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="Description"
+                    android:textColor="@color/black" />
+
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
+    </ScrollView>
 
-    </androidx.cardview.widget.CardView>
+    <!--Button for adding your course to Firebase-->
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
